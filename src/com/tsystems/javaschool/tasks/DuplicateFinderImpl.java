@@ -18,7 +18,6 @@ public class DuplicateFinderImpl implements DuplicateFinder
         System.out.println(d.process(new File("a.txt"), new File("b.txt")));
     }
 
-
     @Override
     public boolean process(File sourceFile, File targetFile)
     {
@@ -28,9 +27,6 @@ public class DuplicateFinderImpl implements DuplicateFinder
         String[] content = PrepareContent(lines);
         return writeFile(targetFile, content);
     }
-
-
-
 
     private Map<String, Integer> readFile(File basefile)
     {
@@ -61,6 +57,10 @@ public class DuplicateFinderImpl implements DuplicateFinder
         }
     }
 
+    /**
+     * sorts and formats strings
+     * as they should appear in the output file
+     */
     private String[] PrepareContent(Map<String, Integer> lines)
     {
         String[] content = new String[lines.size()];
